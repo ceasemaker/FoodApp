@@ -3,11 +3,11 @@ import { StyleSheet, Text, View ,Button} from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 //Import Views here
-import TopBar from './app/components/header';
 import RestaurantImage from './app/components/restaurantImages';
 import Menu from './app/components/restaurantMenus/chickenInn/menu';
 import UserLogin from './app/components/userLogin';
 import OrderScreen1 from './app/components/restaurantMenus/chickenInn/orderScreens/orderScreen1';
+import FoodGenre from './app/components/foodGenre';
 
 
 
@@ -19,6 +19,8 @@ import OrderScreen1 from './app/components/restaurantMenus/chickenInn/orderScree
 
 
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -27,19 +29,38 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-// <RestaurantImage />  <Menu/> <UserLogin /> <TopBar/>
-const RootStack = createStackNavigator(
-{
-  Home: RestaurantImage ,
-  Menu: Menu,
-  OrderScreen:OrderScreen1
+
+const RootStack = createStackNavigator({
+
+  Home: {
+    screen: FoodGenre ,
+    navigationOptions: () => ({
+      header: null
+    }),
+  },
+
+
+  RetaurantImages:{ 
+    screen: RestaurantImage,
+     navigationOptions: () => ({
+      header: null
+    }), 
+  },
+  Menu: {
+    screen: Menu,
+    navigationOptions: ({ navigation }) => {
+      return {
+            title: navigation.getParam('title', 'A Nested Details Screen')
+          };
+        }, 
 
   },
-  {initialRouteName: 'Home'
-   }
-);
+  OrderScreen: {
+    screen: OrderScreen1,
+    navigationOptions: () => ({
+      header: null,
+    }), 
+  },
+  
+ });
 
-  createBottomTabNavigator({
-  Home: RestaurantImage,
-  Menu: Menu,
-});

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListItem } from 'react-native-elements'
-import { ScrollView, Image, Text,StyleSheet,View ,ImageBackground} from 'react-native';
+import { ScrollView, Image, Text,StyleSheet,View ,ImageBackground, StatusBar} from 'react-native';
 
 
 
@@ -121,8 +121,9 @@ render () {
   ]
 
   return (
-  	//<ImageBackground source={require("../images/restaurantLogos/stars.jpg")} style={{width: '100%', height: '100%'}}>
+  	//<ImageBackground source={require('../../../images/restaurantLogos/chickenFillet.jpeg')} style={{width: '100%', height: '100%'}}>
   	<ScrollView >
+    <StatusBar barStyle="dark-content"/>
 
   
 

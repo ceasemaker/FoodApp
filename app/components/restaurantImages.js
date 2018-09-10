@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Image, Text,StyleSheet,View ,Button} from 'react-native';
+import { ScrollView, Image, Text,StyleSheet,View ,Button,StatusBar} from 'react-native';
 import { Tile } from 'react-native-elements';
 
 
@@ -35,7 +35,8 @@ export default class RestaurantImages extends React.Component{
 		];
 		return(
 
-			<ScrollView >
+			<ScrollView>
+			<StatusBar barStyle="light-content"/>
 		
 
 			
@@ -49,7 +50,7 @@ export default class RestaurantImages extends React.Component{
 										  featured
 										  caption={l.caption}				  
 										  containerStyle={{marginBottom:10, width:"100%"}}
-										  onPress={()=> this.props.navigation.navigate('Menu')} />
+										  onPress={()=> this.props.navigation.navigate('Menu',{title: l.title})} />
 						))}
 			
 			
