@@ -43,14 +43,25 @@ const RootStack = createStackNavigator({
   RetaurantImages:{ 
     screen: RestaurantImage,
      navigationOptions: () => ({
-      header: null
+      title: null,
+      headerTransparent: true,
     }), 
   },
   Menu: {
     screen: Menu,
     navigationOptions: ({ navigation }) => {
       return {
-            title: navigation.getParam('title', 'A Nested Details Screen')
+            title: navigation.getParam('title', 'A Nested Details Screen'),
+            headerTransparent: true,
+            headerTitleStyle:{
+              fontSize: 30,
+              color:'#fff',
+              opacity: 5,
+              backgroundColor: 'black',
+              opacity: 0.7 ,
+              width: '100%'     
+            }
+
           };
         }, 
 

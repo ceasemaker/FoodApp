@@ -13,14 +13,14 @@ render () {
     description: 'Deep fried chicken with a side of  chips, mushroom sause and potato wedges',
     price:'$3',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: '2 Piece',
     description: 'Two pieces of chiken drumsticks served with drumsticks and chips',
     price:'$9',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenInn.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   }
   ,
   {
@@ -28,35 +28,35 @@ render () {
     description: 'Three pieces of chiken drumsticks served with drumsticks and chips',
     price:'$7',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: 'Lunch box',
     description: 'Sadza two pieces of chicken and gravy on the side with a drink',
     price:'$3',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: ' Bucket',
     description: '21 mixed pieces of chicken with 4 portions of chipsand 4 large 2l cokes',
     price:'$5',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   }, {
     name: 'Chicken Fillet',
     description: 'Deep fried chicken with a side of  chips, mushroom sause and potato wedges',
     price:'$3'
   ,
   orderScreen:'OrderScreen',
-  foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+  foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: '2 Piece',
     description: 'Two pieces of chiken drumsticks served with drumsticks and chips',
     price:'$9',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   }
   ,
   {
@@ -64,21 +64,21 @@ render () {
     description: 'Three pieces of chiken drumsticks served with drumsticks and chips',
     price:'$7',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: 'Lunch box',
     description: 'Sadza two pieces of chicken and gravy on the side with a drink',
     price:'$3',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: ' Bucket',
     description: '21 mixed pieces of chicken with 4 portions of chipsand 4 large 2l cokes',
     price:'$5',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
    {
     name: 'Chicken Fillet',
@@ -86,14 +86,14 @@ render () {
     price:'$3'
   ,
   orderScreen:'OrderScreen',
-  foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+  foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: '2 Piece',
     description: 'Two pieces of chiken drumsticks served with drumsticks and chips',
     price:'$9',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   }
   ,
   {
@@ -101,29 +101,33 @@ render () {
     description: 'Three pieces of chiken drumsticks served with drumsticks and chips',
     price:'$7',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: 'Lunch box',
     description: 'Sadza two pieces of chicken and gravy on the side with a drink',
     price:'$3',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   },
   {
     name: ' Bucket',
     description: '21 mixed pieces of chicken with 4 portions of chipsand 4 large 2l cokes',
     price:'$5',
     orderScreen:'OrderScreen',
-    foodUrl: require('../../../images/restaurantLogos/chickenFillet.jpeg') 
+    foodUrl: require('../../../images/restaurantLogos/bakersInn.jpg') 
   }
   // more items
-  ]
+  ];
+  const { navigation } = this.props;
+  const imageUrl = navigation.getParam("imageUrl", 'NO-ID');
 
   return (
-  	//<ImageBackground source={require('../../../images/restaurantLogos/chickenFillet.jpeg')} style={{width: '100%', height: '100%'}}>
+  	<ImageBackground source={require('../../../images/backgroundImage/greyImage.jpg')} style={{width: '100%', height: '100%'}}>
   	<ScrollView >
-    <StatusBar barStyle="dark-content"/>
+    <Image source={imageUrl} style={{width: '100%',height:250 }}/>
+
+    <StatusBar barStyle="light-content"/>
 
   
 
@@ -144,7 +148,7 @@ render () {
   }
   
 </ScrollView>
-//</ImageBackground>
+</ImageBackground>
   );
 }
 
