@@ -5,6 +5,18 @@ import { Tile ,Icon} from 'react-native-elements';
 
 
 export default class RestaurantImages extends React.Component{
+
+	openClosed(randomNumber){
+		if (randomNumber <0.2)
+		{
+			return "Closed"
+		}
+		else
+		{
+			return "Open";
+		}
+
+	};
 	render(){
 		const Restaurants =[
 		{ 
@@ -32,7 +44,181 @@ export default class RestaurantImages extends React.Component{
 			caption:"Tap for menu",
 			status:Math.random()
 			
-		},	
+		},
+		//added restaurants
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"La Fontaine",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Miller's Restaurant",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Blue Banana",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Coimbara",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Paul's Place",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Alo Alo Restaurant",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Mojo's Restaurant",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Steak Out",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Steakhouse Butcher and Grill",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+			{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Italian Bakery",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+			{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Applegee's",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Sopranos",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Piccobello Pizzeria",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Vanilla Moon",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Tinkerbell Restaurant",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Da Eros Trattoria",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"DV8",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Queen of Hearts Cafe",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Peppers Restaurant",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"PaGokoro African Cuisine",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Fusion Café Bar",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+		{ 
+			imageUrl: require("../images/restaurantLogos/bakersInn.jpg"),
+			key:"Shangri-La",
+			caption:"Tap for menu",
+			status:Math.random()
+			
+		},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		];
 		return(
@@ -48,7 +234,12 @@ export default class RestaurantImages extends React.Component{
 									title={item.key}
 									source={item.imageUrl}
 									onPress={()=> this.props.navigation.navigate('Menu',{title: item.key,imageUrl: item.imageUrl})}
-								/> <Text style={styles.title}>{`${item.key} \n ${if(item.status <0.5){<Text> Hello</Text>}else {<Text>Hello </Text>}} `} </Text>
+								/> 
+								<View style={styles.restaurantNameContainer}> 
+								<Text style={styles.title}>{`${item.key}`} </Text>
+								<Text style={styles.OpenClosed} >{this.openClosed(item.status)} </Text>
+
+								</View>
 								<View><Icon   name='edit-location'/> <Text> {Math.round(Math.random()*10,2)}km </Text> </View>
 								</TouchableOpacity>
 						}
@@ -62,7 +253,7 @@ export default class RestaurantImages extends React.Component{
 }
 
 
-
+// \n ${if(item.status <0.5){<Text> Hello</Text>}else {<Text>Hello </Text>}}
 
 
 const styles = StyleSheet.create({
@@ -90,7 +281,14 @@ const styles = StyleSheet.create({
   	fontSize: 30
   },
   OpenClosed:{
-  	fontSize: 5
+  	fontSize: 15,
+  	marginTop: 7
+  },
+  restaurantNameContainer:{
+  	flex:1 ,
+  	flexDirection: 'column' ,
+  	justifyContent: 'flex-start'// 'flex-end' 'center' 'space-between' 'space-around' 
+
   }
 
 
